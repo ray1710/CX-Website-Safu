@@ -1,0 +1,138 @@
+SAFIRA WEBSITE — DEVELOPER REFERENCE
+======================================
+Last updated: May 2026
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. PAGES TO BUILD
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Mandatory:
+  - / ..................... Home
+  - /about ................ About
+  - /services ............. Services (overview + 4 sub-services)
+  - /programs ............. Programs & Workshops
+  - /case-studies ......... Case Studies / Success Stories
+  - /testimonials ......... Testimonials
+  - /contact .............. Contact
+  - /book ................. Book a Consultation
+
+Optional (nice to have):
+  - /blog ................. Blog / Insights (good for SEO)
+  - /resources ............ PDFs, templates, guides
+  - /speaking ............. Speaking Engagements
+  - /media ................ Media / Press
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2. PAGE-BY-PAGE CONTENT CHECKLIST
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+HOME (/)
+  [ ] Navbar
+  [ ] Hero — headline, sub-headline, 2 CTAs (Book a Consultation, Explore Services)
+  [ ] Intro paragraph
+  [ ] Services snapshot — 4 cards (title + short description)
+  [ ] Testimonials preview — 2 quotes
+  [ ] Logos row — Intuit, Dell, DHL, OpenTable (placeholder images for now)
+  [ ] Final CTA section
+  [ ] Footer
+
+ABOUT (/about)
+  [ ] Headline
+  [ ] Story / bio paragraphs (Safira's background)
+  [ ] Mission statement
+  [ ] Values list (Empathy, Clarity, Excellence, Integrity, Growth)
+  [ ] Approach section (5 bullet points)
+  [ ] Professional photo — PLACEHOLDER needed from client
+
+SERVICES (/services)
+  [ ] Overview paragraph
+  [ ] 4 service blocks, each with:
+        - Description
+        - Who It's For list
+        - Outcomes list
+        - Individual CTA button
+  Service 1: Customer Service Training       → CTA: "Request Training Details"
+  Service 2: Customer Success Consulting     → CTA: "Book a CS Strategy Call"
+  Service 3: Customer-Centric Transformation → CTA: "Explore Transformation Support"
+  Service 4: Fractional Leadership           → CTA: "Inquire About Fractional Support"
+
+PROGRAMS & WORKSHOPS (/programs)
+  [ ] Headline + intro paragraph
+  [ ] 4 workshop cards, each with a title + bullet list:
+        1. Customer Service Excellence
+        2. Customer Success Foundations
+        3. Customer-Centric Leadership
+        4. Onboarding Experience Design
+  [ ] CTA: "Request a Workshop Proposal"
+
+CASE STUDIES (/case-studies)
+  [ ] Headline + intro paragraph
+  [ ] Case study cards using this template:
+        - Title
+        - The Challenge
+        - The Approach
+        - The Outcome (bullet points with metrics)
+  [ ] Currently 1 case study written — more content needed from client
+
+TESTIMONIALS (/testimonials)
+  [ ] Headline: "What Clients Say"
+  [ ] 3 testimonial quotes (content provided in requirements doc)
+
+CONTACT (/contact)
+  [ ] Headline + intro paragraph
+  [ ] Contact form with fields:
+        - Name
+        - Email
+        - Company
+        - Role
+        - Message
+        - Submit button
+  [ ] Additional info: Email, Location (Richmond Hill, ON), Booking link
+  [ ] Hook up form to an email service (e.g. Resend, EmailJS, Formspree)
+
+BOOK A CONSULTATION (/book)
+  [ ] Headline + short description
+  [ ] Embed a scheduling tool — options:
+        - Calendly (recommended, easy embed)
+        - Microsoft Bookings
+        - Google Calendar Appointments
+  [ ] Needs booking link from client
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+3. THINGS STILL NEEDED FROM CLIENT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  [ ] Professional headshot / photo (for About page)
+  [ ] Logo image files for Intuit, Dell, DHL, OpenTable
+  [ ] Email address (for Contact page + form submissions)
+  [ ] Booking link (Calendly or preferred tool)
+  [ ] More case studies content (only 1 written so far)
+  [ ] Blog content (if going ahead with /blog)
+  [ ] Social media links (LinkedIn etc.) for footer
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+4. INTEGRATIONS TO SET UP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  [ ] Scheduling tool — Calendly / Microsoft Bookings / Google Calendar
+  [ ] Contact form email service — Resend / EmailJS / Formspree
+  [ ] Analytics — Google Analytics or Plausible (recommended)
+  [ ] SEO meta tags on every page (title, description, og:image)
+  [ ] Blog CMS (if needed) — options: Contentlayer, Sanity, Notion API
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+5. GENERAL DEV NOTES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  - Framework: Next.js (App Router)
+  - Styling: Tailwind CSS
+  - Language: TypeScript (.tsx files)
+  - Target audience is global — keep performance and load times in mind
+  - Mobile responsive is a must (CEOs/executives often browse on mobile)
+  - Accessibility: use semantic HTML, alt tags on images, proper heading hierarchy
+  - All CTAs should eventually link to /book or the embedded scheduling tool
