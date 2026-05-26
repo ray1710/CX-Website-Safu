@@ -1,10 +1,10 @@
 export default function IntroSection() {
   return (
-    <section className="bg-[#faf8f4] py-24 px-6">
+    <section className="py-24 px-6">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
         {/* Left — label + headline */}
         <div>
-          <p className="text-xs text-[#c9a464] tracking-[0.2em] uppercase font-light mb-4">
+          <p className="text-xs text-[#1e1d1d] tracking-[0.2em] uppercase font-light mb-4">
             The Philosophy
           </p>
           <h2 className="font-serif text-4xl md:text-5xl text-[#0e1320] font-light leading-tight">

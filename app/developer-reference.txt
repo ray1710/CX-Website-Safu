@@ -29,11 +29,11 @@ Optional (nice to have):
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 HOME (/)
-  [ ] Navbar
-  [ ] Hero — headline, sub-headline, 2 CTAs (Book a Consultation, Explore Services)
-  [ ] Intro paragraph
-  [ ] Services snapshot — 4 cards (title + short description)
-  [ ] Testimonials preview — 2 quotes
+  [✓] Navbar
+  [✓] Hero — headline, sub-headline, 2 CTAs (Book a Consultation, Explore Services)
+  [✓] Intro paragraph
+  [✓] Services snapshot — 4 cards (title + short description)
+  [✓] Testimonials preview — 2 quotes
   [ ] Logos row — Intuit, Dell, DHL, OpenTable (placeholder images for now)
   [ ] Final CTA section
   [ ] Footer
