@@ -36,10 +36,7 @@ export default function Navbar() {
               {item}
             </a>
           ))}
-          <a
-            href="#contact"
-            className="ml-2 text-sm bg-[#c9a464] text-[#0e1320] font-medium px-5 py-2 rounded-sm hover:bg-[#d9b474] transition-colors duration-200 tracking-wide"
-          >
+          <a className="ml-2 text-sm bg-[#c9a464] text-[#0e1320] font-medium px-5 py-2 rounded-sm hover:bg-[#d9b474] transition-colors duration-200 tracking-wide">
             Book a Call
           </a>
         </div>
