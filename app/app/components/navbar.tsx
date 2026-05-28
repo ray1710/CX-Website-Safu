@@ -1,6 +1,15 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
+
+const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "#" },
+  { label: "Testimonials", href: "#" },
+  { label: "Contact", href: "#" },
+];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -22,23 +31,30 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <span className="font-serif text-xl font-light text-white tracking-wide">
-          <span className="text-[#c9a464]"></span>
-        </span>
+        <Link
+          href="/"
+          className="font-serif text-xl font-light text-white tracking-wide"
+        >
+          Safira<span className="text-[#c9a464]">.</span>
+        </Link>
 
         {/* Desktop links */}
         <div className="hidden md:flex items-center gap-10">
-          {["Services", "About", "Testimonials", "Contact"].map((item) => (
-            <a
-              key={item}
+          {navLinks.map((item) => (
+            <Link
+              key={item.label}
+              href={item.href}
               className="text-sm text-white/60 hover:text-white transition-colors duration-200 tracking-wide font-light"
             >
-              {item}
-            </a>
+              {item.label}
+            </Link>
           ))}
-          <a className="ml-2 text-sm bg-[#c9a464] text-[#0e1320] font-medium px-5 py-2 rounded-sm hover:bg-[#d9b474] transition-colors duration-200 tracking-wide">
+          <Link
+            href="#"
+            className="ml-2 text-sm bg-[#c9a464] text-[#0e1320] font-medium px-5 py-2 rounded-sm hover:bg-[#d9b474] transition-colors duration-200 tracking-wide"
+          >
             Book a Call
-          </a>
+          </Link>
         </div>
 
         {/* Mobile menu toggle */}
@@ -74,23 +90,23 @@ export default function Navbar() {
       {/* Mobile menu */}
       {menuOpen && (
         <div className="md:hidden bg-[#0e1320]/98 border-t border-white/10 px-6 py-6 flex flex-col gap-5">
-          {["Services", "About", "Testimonials", "Contact"].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
+          {navLinks.map((item) => (
+            <Link
+              key={item.label}
+              href={item.href}
               className="text-sm text-white/70 hover:text-white transition-colors"
               onClick={() => setMenuOpen(false)}
             >
-              {item}
-            </a>
+              {item.label}
+            </Link>
           ))}
-          <a
-            href="#contact"
+          <Link
+            href="#"
             className="text-sm bg-[#c9a464] text-[#0e1320] font-medium px-5 py-2.5 text-center rounded-sm"
             onClick={() => setMenuOpen(false)}
           >
             Book a Call
-          </a>
+          </Link>
         </div>
       )}
     </nav>
