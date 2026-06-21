@@ -13,14 +13,31 @@ export const structure: StructureResolver = (S) =>
             .title("Home")
             .items([
               S.documentTypeListItem("heroSection").title("Hero Section"),
+              S.documentTypeListItem("introSection").title("Intro Section"),
+              S.documentTypeListItem("servicesSnapshot").title(
+                "Services Snapshot",
+              ),
+              S.documentTypeListItem("testimonialsSection").title(
+                "Testimonials Section",
+              ),
+              S.documentTypeListItem("finalCta").title("Final CTA"),
             ]),
         ),
 
-      S.listItem().title("About").icon(UsersIcon).child(
-        S.list().title("About").items([
-          // Add about schemas here
-        ]),
-      ),
+      S.listItem()
+        .title("About")
+        .icon(UsersIcon)
+        .child(
+          S.list()
+            .title("About")
+            .items([
+              S.documentTypeListItem("aboutHero").title("Hero"),
+              S.documentTypeListItem("aboutStory").title("Story"),
+              S.documentTypeListItem("aboutMVA").title(
+                "Mission, Values & Approach",
+              ),
+            ]),
+        ),
 
       S.listItem().title("Services").icon(StarIcon).child(
         S.list().title("Services").items([

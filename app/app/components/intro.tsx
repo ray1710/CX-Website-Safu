@@ -1,29 +1,41 @@
-export default function IntroSection() {
+type IntroSectionProps = {
+  label?: string;
+  headline?: string;
+  body?: {
+    beforeItalic?: string;
+    italic?: string;
+    afterItalic?: string;
+  };
+};
+
+export default function IntroSection({
+  label,
+  headline,
+  body,
+}: IntroSectionProps) {
   return (
     <section className="py-24 px-6">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
         {/* Left — label + headline */}
         <div>
           <p className="text-xs text-[#1e1d1d] tracking-[0.2em] uppercase font-light mb-4">
-            The Philosophy
+            {label ?? "The Philosophy"}
           </p>
           <h2 className="font-serif text-4xl md:text-5xl text-[#0e1320] font-light leading-tight">
-            More than fast responses.
+            {headline ?? "More than fast responses."}
           </h2>
         </div>
 
         {/* Right — paragraph */}
         <div>
           <p className="text-[#3d3d5c] text-lg font-light leading-relaxed">
-            Today's customers expect more than fast responses — they expect{" "}
+            {body?.beforeItalic ??
+              "Today's customers expect more than fast responses — they expect"}{" "}
             <span className="font-serif italic text-[#0e1320]">
-              empathy, clarity, and consistency.
+              {body?.italic ?? "empathy, clarity, and consistency."}
             </span>{" "}
-            I help organizations build the systems, skills, and culture required
-            to deliver world-class customer experiences. Through consulting,
-            training, and hands-on transformation support, I partner with
-            leaders to elevate service quality, strengthen customer loyalty, and
-            empower teams to perform at their best.
+            {body?.afterItalic ??
+              "I help organizations build the systems, skills, and culture required to deliver world-class customer experiences. Through consulting, training, and hands-on transformation support, I partner with leaders to elevate service quality, strengthen customer loyalty, and empower teams to perform at their best."}
           </p>
         </div>
       </div>
