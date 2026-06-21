@@ -24,11 +24,20 @@ export const structure: StructureResolver = (S) =>
             ]),
         ),
 
-      S.listItem().title("About").icon(UsersIcon).child(
-        S.list().title("About").items([
-          // Add about schemas here
-        ]),
-      ),
+      S.listItem()
+        .title("About")
+        .icon(UsersIcon)
+        .child(
+          S.list()
+            .title("About")
+            .items([
+              S.documentTypeListItem("aboutHero").title("Hero"),
+              S.documentTypeListItem("aboutStory").title("Story"),
+              S.documentTypeListItem("aboutMVA").title(
+                "Mission, Values & Approach",
+              ),
+            ]),
+        ),
 
       S.listItem().title("Services").icon(StarIcon).child(
         S.list().title("Services").items([
