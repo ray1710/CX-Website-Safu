@@ -2,22 +2,23 @@
 
 import { useState, useEffect } from "react";
 
-const testimonials = [
-  {
-    quote:
-      "Safira helped us transform our onboarding and support experience. Our customer satisfaction scores increased within months.",
-    author: "Client",
-    role: "SaaS Industry",
-  },
-  {
-    quote:
-      "Her training changed the way our team communicates with customers. The impact was immediate.",
-    author: "Director of Customer Support",
-    role: "Enterprise Tech",
-  },
-];
+interface Testimonial {
+  quote: string;
+  author: string;
+  role: string;
+}
 
-export default function TestimonialsSection() {
+interface TestimonialsSectionProps {
+  label: string;
+  heading: string;
+  testimonials: Testimonial[];
+}
+
+export default function TestimonialsSection({
+  label,
+  heading,
+  testimonials,
+}: TestimonialsSectionProps) {
   const [active, setActive] = useState(0);
 
   useEffect(() => {
@@ -26,17 +27,17 @@ export default function TestimonialsSection() {
       5500,
     );
     return () => clearInterval(t);
-  }, []);
+  }, [testimonials.length]);
 
   return (
     <section id="testimonials" className="bg-[#0e1320] py-24 px-6">
       <div className="max-w-4xl mx-auto text-center">
         {/* Header */}
         <p className="text-xs text-[#c9a464] tracking-[0.2em] uppercase font-light mb-3">
-          Testimonials
+          {label}
         </p>
         <h2 className="font-serif text-4xl md:text-5xl text-white font-light mb-16">
-          What clients say
+          {heading}
         </h2>
 
         {/* Quotes */}
@@ -44,7 +45,7 @@ export default function TestimonialsSection() {
           {testimonials.map((t, i) => (
             <div
               key={i}
-              className="absolute inset-0 flex flex-col items-center justify-center px-4 transition-all duration-600"
+              className="absolute inset-0 flex flex-col items-center justify-center px-4"
               style={{
                 opacity: i === active ? 1 : 0,
                 transform: i === active ? "translateY(0)" : "translateY(12px)",

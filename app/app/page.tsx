@@ -11,17 +11,23 @@ import { Fragment } from "react/jsx-runtime";
 export const revalidate = 0;
 
 export default async function Page() {
-  const hero = await client.fetch(`*[_type == "heroSection"][0]`);
+  const [hero, intro, services, testimonials, finalCta] = await Promise.all([
+    client.fetch(`*[_type == "heroSection"][0]`),
+    client.fetch(`*[_type == "introSection"][0]`),
+    client.fetch(`*[_type == "servicesSnapshot"][0]`),
+    client.fetch(`*[_type == "testimonialsSection"][0]`),
+    client.fetch(`*[_type == "finalCta"][0]`),
+  ]);
 
   return (
     <Fragment>
       <Navbar />
       <HeroSection {...hero} />
       <div className="bg-[#faf8f4]">
-        <IntroSection />
-        <ServicesSnapshot />
-        <TestimonialsSection />
-        <FinalCTA />
+        <IntroSection {...intro} />
+        <ServicesSnapshot {...services} />
+        <TestimonialsSection {...testimonials} />
+        <FinalCTA {...finalCta} />
         <Footer />
       </div>
     </Fragment>
