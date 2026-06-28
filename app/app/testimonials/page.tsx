@@ -1,16 +1,24 @@
 import Navbar from "@/app/components/navbar";
 import Footer from "@/app/components/footer";
-import TestimonialsHero from "@/app/components/testimonials/hero";
-import TestimonialsGrid from "@/app/components/testimonials/grid";
-import TestimonialsCTA from "@/app/components/testimonials/cta";
 
 export default function TestimonialsPage() {
   return (
     <>
       <Navbar />
-      <TestimonialsHero />
-      <TestimonialsGrid />
-      <TestimonialsCTA />
+
+      <section className="min-h-[60vh] flex flex-col items-center justify-center text-center px-6 py-24 bg-[#faf8f4]">
+        <p className="text-sm uppercase tracking-widest text-[#c9a464] mb-4 font-medium">
+          Coming Soon
+        </p>
+        <h1 className="text-4xl md:text-5xl font-bold text-[#0e1320] mb-6">
+          Client Stories Are on Their Way
+        </h1>
+        <p className="text-[#3d3d5c] max-w-xl text-lg leading-relaxed">
+          Safira is currently working with clients to gather their experiences.
+          Check back soon to read real stories of transformation and results.
+        </p>
+      </section>
+
       <Footer />
     </>
   );
