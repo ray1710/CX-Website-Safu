@@ -39,11 +39,18 @@ export const structure: StructureResolver = (S) =>
             ]),
         ),
 
-      S.listItem().title("Services").icon(StarIcon).child(
-        S.list().title("Services").items([
-          // Add services schemas here
-        ]),
-      ),
+      S.listItem()
+        .title("Services")
+        .icon(StarIcon)
+        .child(
+          S.list()
+            .title("Services")
+            .items([
+              S.documentTypeListItem("servicesHero").title("Hero"),
+              S.documentTypeListItem("servicesOverview").title("Overview"),
+              S.documentTypeListItem("servicesBlocks").title("Service Blocks"),
+            ]),
+        ),
 
       S.listItem().title("Contact").icon(EnvelopeIcon).child(
         S.list().title("Contact").items([
