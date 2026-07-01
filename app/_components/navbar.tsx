@@ -7,7 +7,6 @@ const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
-  { label: "Contact", href: "#" },
 ];
 
 export default function Navbar() {
@@ -49,10 +48,10 @@ export default function Navbar() {
             </Link>
           ))}
           <Link
-            href="#"
+            href="/contact"
             className="ml-2 text-sm bg-[#c9a464] text-[#0e1320] font-medium px-5 py-2 rounded-sm hover:bg-[#d9b474] transition-colors duration-200 tracking-wide"
           >
-            Book a Call
+            Contact
           </Link>
         </div>
 
@@ -100,11 +99,11 @@ export default function Navbar() {
             </Link>
           ))}
           <Link
-            href="#"
-            className="text-sm bg-[#c9a464] text-[#0e1320] font-medium px-5 py-2.5 text-center rounded-sm"
+            href="/contact"
+            className="text-sm bg-[#c9a464] text-[#0e1320] font-medium px-5 py-2.5 text-center rounded-sm hover:bg-[#d9b474] transition-colors duration-200"
             onClick={() => setMenuOpen(false)}
           >
-            Book a Call
+            Contact
           </Link>
         </div>
       )}
