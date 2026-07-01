@@ -59,7 +59,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="/book"
+                  href="/contact"
                   className="text-[#c9a464] text-sm font-light hover:text-[#d9b474] transition-colors duration-200"
                 >
                   Book a Consultation →
@@ -70,7 +70,7 @@ export default function Footer() {
             {/* Social */}
             <div className="flex gap-4 mt-6">
               <a
-                href="#"
+                href="https://www.linkedin.com/in/safiraamin/"
                 className="text-white/30 text-sm font-light hover:text-white transition-colors duration-200"
               >
                 LinkedIn

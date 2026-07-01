@@ -63,20 +63,20 @@ export default function ContactForm() {
       <div className="max-w-3xl mx-auto">
         {/* Header */}
         <div className="mb-12">
-          <p className="text-xs text-[#1e1d1d] tracking-[0.2em] uppercase font-light mb-4">
+          <p className="text-xs text-[#1e1d1d] tracking-[0.2em] uppercase font-semibold mb-4">
             Contact
           </p>
         </div>
 
-        {/* Form */}
+        {/* Form card — lifted off the cream background so the fields read clearly */}
         <form
           onSubmit={handleSubmit}
-          className="flex flex-col gap-6"
+          className="flex flex-col gap-6 bg-white p-8 sm:p-10 rounded-md shadow-md border border-[#e2dccd]"
           noValidate
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div className="flex flex-col gap-2">
-              <label className="text-xs text-[#1e1d1d] tracking-[0.2em] uppercase font-light">
+              <label className="text-xs text-[#1e1d1d] tracking-[0.2em] uppercase font-semibold">
                 Name <span className="text-[#c9a464]">*</span>
               </label>
               <input
@@ -84,18 +84,20 @@ export default function ContactForm() {
                 value={form.name}
                 onChange={handleChange}
                 placeholder="Jane Smith"
-                className={`bg-white border px-4 py-3 text-sm text-[#0e1320] font-light placeholder:text-[#b0ab9e] focus:outline-none transition-colors duration-200 ${
+                className={`bg-white border-2 px-4 py-3 text-sm text-[#0e1320] font-normal placeholder:text-[#8a8577] rounded-sm focus:outline-none focus:ring-2 focus:ring-[#c9a464]/30 transition-colors duration-200 ${
                   errors.name
                     ? "border-red-400 focus:border-red-400"
-                    : "border-[#e8e3da] focus:border-[#c9a464]"
+                    : "border-[#c9c2b0] focus:border-[#c9a464]"
                 }`}
               />
               {errors.name && (
-                <p className="text-xs text-red-500">{errors.name}</p>
+                <p className="text-xs text-red-600 font-medium">
+                  {errors.name}
+                </p>
               )}
             </div>
             <div className="flex flex-col gap-2">
-              <label className="text-xs text-[#1e1d1d] tracking-[0.2em] uppercase font-light">
+              <label className="text-xs text-[#1e1d1d] tracking-[0.2em] uppercase font-semibold">
                 Email <span className="text-[#c9a464]">*</span>
               </label>
               <input
@@ -104,20 +106,22 @@ export default function ContactForm() {
                 value={form.email}
                 onChange={handleChange}
                 placeholder="jane@company.com"
-                className={`bg-white border px-4 py-3 text-sm text-[#0e1320] font-light placeholder:text-[#b0ab9e] focus:outline-none transition-colors duration-200 ${
+                className={`bg-white border-2 px-4 py-3 text-sm text-[#0e1320] font-normal placeholder:text-[#8a8577] rounded-sm focus:outline-none focus:ring-2 focus:ring-[#c9a464]/30 transition-colors duration-200 ${
                   errors.email
                     ? "border-red-400 focus:border-red-400"
-                    : "border-[#e8e3da] focus:border-[#c9a464]"
+                    : "border-[#c9c2b0] focus:border-[#c9a464]"
                 }`}
               />
               {errors.email && (
-                <p className="text-xs text-red-500">{errors.email}</p>
+                <p className="text-xs text-red-600 font-medium">
+                  {errors.email}
+                </p>
               )}
             </div>
           </div>
 
           <div className="flex flex-col gap-2">
-            <label className="text-xs text-[#1e1d1d] tracking-[0.2em] uppercase font-light">
+            <label className="text-xs text-[#1e1d1d] tracking-[0.2em] uppercase font-semibold">
               Company
             </label>
             <input
@@ -125,19 +129,19 @@ export default function ContactForm() {
               value={form.company}
               onChange={handleChange}
               placeholder="Your organization"
-              className="bg-white border border-[#e8e3da] px-4 py-3 text-sm text-[#0e1320] font-light placeholder:text-[#b0ab9e] focus:outline-none focus:border-[#c9a464] transition-colors duration-200"
+              className="bg-white border-2 border-[#c9c2b0] px-4 py-3 text-sm text-[#0e1320] font-normal placeholder:text-[#8a8577] rounded-sm focus:outline-none focus:border-[#c9a464] focus:ring-2 focus:ring-[#c9a464]/30 transition-colors duration-200"
             />
           </div>
 
           <div className="flex flex-col gap-2">
-            <label className="text-xs text-[#1e1d1d] tracking-[0.2em] uppercase font-light">
+            <label className="text-xs text-[#1e1d1d] tracking-[0.2em] uppercase font-semibold">
               Service of Interest
             </label>
             <select
               name="service"
               value={form.service}
               onChange={handleChange}
-              className="bg-white border border-[#e8e3da] px-4 py-3 text-sm text-[#0e1320] font-light focus:outline-none focus:border-[#c9a464] transition-colors duration-200 appearance-none"
+              className="bg-white border-2 border-[#c9c2b0] px-4 py-3 text-sm text-[#0e1320] font-normal rounded-sm focus:outline-none focus:border-[#c9a464] focus:ring-2 focus:ring-[#c9a464]/30 transition-colors duration-200 appearance-none"
             >
               <option value="">Select a service...</option>
               <option value="training">Customer Service Training</option>
@@ -151,7 +155,7 @@ export default function ContactForm() {
           </div>
 
           <div className="flex flex-col gap-2">
-            <label className="text-xs text-[#1e1d1d] tracking-[0.2em] uppercase font-light">
+            <label className="text-xs text-[#1e1d1d] tracking-[0.2em] uppercase font-semibold">
               Message <span className="text-[#c9a464]">*</span>
             </label>
             <textarea
@@ -160,24 +164,26 @@ export default function ContactForm() {
               onChange={handleChange}
               rows={5}
               placeholder="Tell me a bit about your organization and what you're looking to achieve..."
-              className={`bg-white border px-4 py-3 text-sm text-[#0e1320] font-light placeholder:text-[#b0ab9e] focus:outline-none transition-colors duration-200 resize-none ${
+              className={`bg-white border-2 px-4 py-3 text-sm text-[#0e1320] font-normal placeholder:text-[#8a8577] rounded-sm focus:outline-none focus:ring-2 focus:ring-[#c9a464]/30 transition-colors duration-200 resize-none ${
                 errors.message
                   ? "border-red-400 focus:border-red-400"
-                  : "border-[#e8e3da] focus:border-[#c9a464]"
+                  : "border-[#c9c2b0] focus:border-[#c9a464]"
               }`}
             />
             {errors.message && (
-              <p className="text-xs text-red-500">{errors.message}</p>
+              <p className="text-xs text-red-600 font-medium">
+                {errors.message}
+              </p>
             )}
           </div>
 
           {state === "success" && (
-            <p className="text-sm text-green-700 font-light">
+            <p className="text-sm text-green-700 font-medium">
               Message sent! I'll be in touch within one business day.
             </p>
           )}
           {state === "error" && (
-            <p className="text-sm text-red-500 font-light">
+            <p className="text-sm text-red-600 font-medium">
               Something went wrong. Please try again or reach out directly at{" "}
               <a
                 href="mailto:safira@example.com"
