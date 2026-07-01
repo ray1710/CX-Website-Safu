@@ -1,8 +1,8 @@
-import Navbar from "@/app/components/navbar";
-import Footer from "@/app/components/footer";
-import ServicesHero from "@/app/components/services/hero";
-import ServicesOverview from "@/app/components/services/overview";
-import ServicesBlocks from "@/app/components/services/serviceblocks";
+import Navbar from "@/_components/navbar";
+import Footer from "@/_components/footer";
+import ServicesHero from "@/_components/services/hero";
+import ServicesOverview from "@/_components/services/overview";
+import ServicesBlocks from "@/_components/services/serviceblocks";
 import { client } from "@/sanity/lib/client";
 
 export const revalidate = 0;

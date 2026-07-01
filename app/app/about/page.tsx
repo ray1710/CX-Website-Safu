@@ -1,9 +1,9 @@
 // app/about/page.tsx
-import Navbar from "@/app/components/navbar";
-import Footer from "@/app/components/footer";
-import AboutHero from "@/app/components/about/aboutHero";
-import AboutStory from "@/app/components/about/aboutStory";
-import AboutMVA from "@/app/components/about/aboutMVA";
+import Navbar from "@/_components/navbar";
+import Footer from "@/_components/footer";
+import AboutHero from "@/_components/about/aboutHero";
+import AboutStory from "@/_components/about/aboutStory";
+import AboutMVA from "@/_components/about/aboutMVA";
 import { client } from "@/sanity/lib/client";
 
 export const revalidate = 0;
