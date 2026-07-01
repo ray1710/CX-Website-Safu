@@ -1,5 +1,5 @@
-import Navbar from "@/app/components/navbar";
-import Footer from "@/app/components/footer";
+import Navbar from "@/_components/navbar";
+import Footer from "@/_components/footer";
 
 export default function TestimonialsPage() {
   return (
