@@ -7,6 +7,9 @@ import testimonalsSection from "./testimonalsSection";
 import aboutHero from "./aboutHero";
 import aboutStory from "./aboutStory";
 import aboutMVA from "./aboutMVA";
+import servicesHero from "./servicesHero";
+import servicesOverview from "./servicesOverview";
+import servicesBlocks from "./servicesBlocks";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -18,5 +21,8 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     aboutHero,
     aboutMVA,
     aboutStory,
+    servicesHero,
+    servicesOverview,
+    servicesBlocks,
   ],
 };
