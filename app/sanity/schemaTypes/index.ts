@@ -10,7 +10,9 @@ import aboutMVA from "./aboutMVA";
 import servicesHero from "./servicesHero";
 import servicesOverview from "./servicesOverview";
 import servicesBlocks from "./servicesBlocks";
-
+import contactBookDivider from "./contactBookDivider";
+import contactForm from "./contactForm";
+import contactHero from "./contactHero";
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
     heroSection,
@@ -24,5 +26,8 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     servicesHero,
     servicesOverview,
     servicesBlocks,
+    contactBookDivider,
+    contactForm,
+    contactHero,
   ],
 };
