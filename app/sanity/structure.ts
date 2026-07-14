@@ -52,9 +52,17 @@ export const structure: StructureResolver = (S) =>
             ]),
         ),
 
-      S.listItem().title("Contact").icon(EnvelopeIcon).child(
-        S.list().title("Contact").items([
-          // Add contact schemas here
-        ]),
-      ),
+      S.listItem()
+        .title("Contact")
+        .icon(EnvelopeIcon)
+        .child(
+          S.list()
+            .title("Contact")
+            .items([
+              //S.documentTypeListItem("contactHero").title("Book Hero"),
+              S.documentTypeListItem("bookDivider").title("Book Divider"),
+              S.documentTypeListItem("contactForm").title("Contact Form"),
+              S.documentTypeListItem("bookHero").title("Hero"),
+            ]),
+        ),
     ]);

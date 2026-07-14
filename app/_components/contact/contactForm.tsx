@@ -4,7 +4,26 @@ import { useState, type ChangeEvent, type FormEvent } from "react";
 
 type FormState = "idle" | "loading" | "success" | "error";
 
-export default function ContactForm() {
+type ServiceOption = {
+  label: string;
+  value: string;
+};
+
+type ContactFormProps = {
+  sectionLabel: string;
+  serviceOptions: ServiceOption[];
+  successMessage: string;
+  errorMessage: string;
+  fallbackEmail: string;
+};
+
+export default function ContactForm({
+  sectionLabel,
+  serviceOptions,
+  successMessage,
+  errorMessage,
+  fallbackEmail,
+}: ContactFormProps) {
   const [state, setState] = useState<FormState>("idle");
   const [form, setForm] = useState({
     name: "",
@@ -64,11 +83,11 @@ export default function ContactForm() {
         {/* Header */}
         <div className="mb-12">
           <p className="text-xs text-[#1e1d1d] tracking-[0.2em] uppercase font-semibold mb-4">
-            Contact
+            {sectionLabel}
           </p>
         </div>
 
-        {/* Form card — lifted off the cream background so the fields read clearly */}
+        {/* Form card */}
         <form
           onSubmit={handleSubmit}
           className="flex flex-col gap-6 bg-white p-8 sm:p-10 rounded-md shadow-md border border-[#e2dccd]"
@@ -144,13 +163,11 @@ export default function ContactForm() {
               className="bg-white border-2 border-[#c9c2b0] px-4 py-3 text-sm text-[#0e1320] font-normal rounded-sm focus:outline-none focus:border-[#c9a464] focus:ring-2 focus:ring-[#c9a464]/30 transition-colors duration-200 appearance-none"
             >
               <option value="">Select a service...</option>
-              <option value="training">Customer Service Training</option>
-              <option value="consulting">Customer Success Consulting</option>
-              <option value="transformation">
-                Customer-Centric Transformation
-              </option>
-              <option value="fractional">Fractional Leadership</option>
-              <option value="other">Other / Not Sure Yet</option>
+              {serviceOptions.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
             </select>
           </div>
 
@@ -179,17 +196,17 @@ export default function ContactForm() {
 
           {state === "success" && (
             <p className="text-sm text-green-700 font-medium">
-              Message sent! I'll be in touch within one business day.
+              {successMessage}
             </p>
           )}
           {state === "error" && (
             <p className="text-sm text-red-600 font-medium">
-              Something went wrong. Please try again or reach out directly at{" "}
+              {errorMessage}{" "}
               <a
-                href="mailto:safira@example.com"
+                href={`mailto:${fallbackEmail}`}
                 className="underline hover:text-red-700"
               >
-                safira@example.com
+                {fallbackEmail}
               </a>
               .
             </p>
