@@ -90,7 +90,8 @@ CONTACT (/contact)
         - Message
         - Submit button
   [ ] Additional info: Email, Location (Richmond Hill, ON), Booking link
-  [ ] Hook up form to an email service (e.g. Resend, EmailJS, Formspree)
+  [x] Hook up form to an email service — Resend (app/api/contact/route.ts)
+      Wired up but NOT sending real leads yet — see section 5 below.
 
 BOOK A CONSULTATION (/book)
   [ ] Headline + short description
@@ -119,9 +120,30 @@ BOOK A CONSULTATION (/book)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
   [ ] Scheduling tool — Calendly / Microsoft Bookings / Google Calendar
-  [ ] Contact form email service — Resend / EmailJS / Formspree
+  [x] Contact form email service — Resend (code done, config pending, see section 5)
   [ ] Analytics — Google Analytics or Plausible (recommended)
   [ ] SEO meta tags on every page (title, description, og:image)
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+5. RESEND — REMAINING SETUP (contact form is code-complete but not live)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  [ ] Sign up at resend.com, create an API key, set RESEND_API_KEY
+      in app/.env.local (currently a placeholder) and in the prod
+      host's env vars once deployed.
+  [ ] Buy/confirm the real production domain (current one is not
+      official) and verify it in the Resend dashboard (DKIM/SPF/DMARC
+      DNS records — Resend provides the exact records).
+  [ ] Once domain is verified, set CONTACT_FROM_EMAIL to something
+      like "Safira <contact@realdomain.com>" (currently
+      onboarding@resend.dev, Resend's shared test domain — only
+      delivers to the email used to sign up for Resend).
+  [ ] Get the real inbox address from the client and set
+      CONTACT_TO_EMAIL in app/.env.local (currently a placeholder).
+  [ ] Add RESEND_API_KEY / CONTACT_TO_EMAIL / CONTACT_FROM_EMAIL to
+      the hosting platform's env vars (Vercel etc.) — .env.local is
+      gitignored and never leaves this machine.
   [ ] Blog CMS (if needed) — options: Contentlayer, Sanity, Notion API
 
 
